@@ -1,0 +1,1 @@
+/usr/bin/c++   -std=c++17 -O3  -rdynamic CMakeFiles/client.dir/src/grpc_client.cpp.o CMakeFiles/client.dir/src/generated/template.grpc.pb.cc.o CMakeFiles/client.dir/src/generated/template.pb.cc.o  -o client -Wl,-rpath,/usr/local/lib -lpthread -lgrpc++ -lprotobuf /usr/local/lib/libjemalloc.so 

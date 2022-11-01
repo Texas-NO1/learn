@@ -1,0 +1,4 @@
+/app/learn/grpc-memory/build/CMakeFiles/rebuild_cache.dir
+/app/learn/grpc-memory/build/CMakeFiles/edit_cache.dir
+/app/learn/grpc-memory/build/CMakeFiles/client.dir
+/app/learn/grpc-memory/build/CMakeFiles/server.dir

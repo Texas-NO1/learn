@@ -1,0 +1,76 @@
+heap_v2/1
+  t*: 1026: 1134592 [0: 0]
+  t0: 1026: 1134592 [0: 0]
+@ 0x7f6eb82daaf1 0x7f6eb82db0b1 0x7f6eb82cc454 0x7f6eb825846b 0x7f6eb80fb546 0x7f6eb853837a 0x7f6eb8538476 0x7f6eb852a0ca
+  t*: 1: 81920 [0: 0]
+  t0: 1: 81920 [0: 0]
+@ 0x7f6eb82daaf1 0x7f6eb82db0b1 0x7f6eb82cc454 0x7f6eb82577ea 0x7f6eb7d6a71c 0x7f6eb7d78700 0x7f6eb7d77988 0x7f6eb7d76a8f 0x7f6eb7d6bae8 0x7f6eb81708c2 0x7f6eb817de76 0x55c2b4801200 0x7f6eb7d1f09b 0x55c2b48010da
+  t*: 1: 4096 [0: 0]
+  t0: 1: 4096 [0: 0]
+@ 0x7f6eb82daaf1 0x7f6eb82db0b1 0x7f6eb82cc454 0x7f6eb82577ea 0x55c2b48011dc 0x55c2b480123b 0x7f6eb7d1f09b 0x55c2b48010da
+  t*: 1024: 1048576 [0: 0]
+  t0: 1024: 1048576 [0: 0]
+
+MAPPED_LIBRARIES:
+55c2b4800000-55c2b4801000 r--p 00000000 08:02 72614937                   /app/learn/jemalloc/a.out
+55c2b4801000-55c2b4802000 r-xp 00001000 08:02 72614937                   /app/learn/jemalloc/a.out
+55c2b4802000-55c2b4803000 r--p 00002000 08:02 72614937                   /app/learn/jemalloc/a.out
+55c2b4803000-55c2b4804000 r--p 00002000 08:02 72614937                   /app/learn/jemalloc/a.out
+55c2b4804000-55c2b4805000 rw-p 00003000 08:02 72614937                   /app/learn/jemalloc/a.out
+7f6eb4400000-7f6eb6a00000 rw-p 00000000 00:00 0 
+7f6eb6bff000-7f6eb6c00000 ---p 00000000 00:00 0 
+7f6eb6c00000-7f6eb7400000 rw-p 00000000 00:00 0 
+7f6eb7400000-7f6eb7c00000 rw-p 00000000 00:00 0 
+7f6eb7cce000-7f6eb7cd3000 rw-p 00000000 00:00 0 
+7f6eb7cd3000-7f6eb7cd9000 r--p 00000000 08:11 57608102                   /lib/x86_64-linux-gnu/libpthread-2.28.so
+7f6eb7cd9000-7f6eb7ce8000 r-xp 00006000 08:11 57608102                   /lib/x86_64-linux-gnu/libpthread-2.28.so
+7f6eb7ce8000-7f6eb7cee000 r--p 00015000 08:11 57608102                   /lib/x86_64-linux-gnu/libpthread-2.28.so
+7f6eb7cee000-7f6eb7cef000 r--p 0001a000 08:11 57608102                   /lib/x86_64-linux-gnu/libpthread-2.28.so
+7f6eb7cef000-7f6eb7cf0000 rw-p 0001b000 08:11 57608102                   /lib/x86_64-linux-gnu/libpthread-2.28.so
+7f6eb7cf0000-7f6eb7cf6000 rw-p 00000000 00:00 0 
+7f6eb7cf6000-7f6eb7cf7000 r--p 00000000 08:11 57608055                   /lib/x86_64-linux-gnu/libdl-2.28.so
+7f6eb7cf7000-7f6eb7cf8000 r-xp 00001000 08:11 57608055                   /lib/x86_64-linux-gnu/libdl-2.28.so
+7f6eb7cf8000-7f6eb7cf9000 r--p 00002000 08:11 57608055                   /lib/x86_64-linux-gnu/libdl-2.28.so
+7f6eb7cf9000-7f6eb7cfa000 r--p 00002000 08:11 57608055                   /lib/x86_64-linux-gnu/libdl-2.28.so
+7f6eb7cfa000-7f6eb7cfb000 rw-p 00003000 08:11 57608055                   /lib/x86_64-linux-gnu/libdl-2.28.so
+7f6eb7cfb000-7f6eb7d1d000 r--p 00000000 08:11 57608047                   /lib/x86_64-linux-gnu/libc-2.28.so
+7f6eb7d1d000-7f6eb7e65000 r-xp 00022000 08:11 57608047                   /lib/x86_64-linux-gnu/libc-2.28.so
+7f6eb7e65000-7f6eb7eb1000 r--p 0016a000 08:11 57608047                   /lib/x86_64-linux-gnu/libc-2.28.so
+7f6eb7eb1000-7f6eb7eb2000 ---p 001b6000 08:11 57608047                   /lib/x86_64-linux-gnu/libc-2.28.so
+7f6eb7eb2000-7f6eb7eb6000 r--p 001b6000 08:11 57608047                   /lib/x86_64-linux-gnu/libc-2.28.so
+7f6eb7eb6000-7f6eb7eb8000 rw-p 001ba000 08:11 57608047                   /lib/x86_64-linux-gnu/libc-2.28.so
+7f6eb7eb8000-7f6eb7ebc000 rw-p 00000000 00:00 0 
+7f6eb7ebc000-7f6eb7ebf000 r--p 00000000 08:11 57608063                   /lib/x86_64-linux-gnu/libgcc_s.so.1
+7f6eb7ebf000-7f6eb7ed0000 r-xp 00003000 08:11 57608063                   /lib/x86_64-linux-gnu/libgcc_s.so.1
+7f6eb7ed0000-7f6eb7ed3000 r--p 00014000 08:11 57608063                   /lib/x86_64-linux-gnu/libgcc_s.so.1
+7f6eb7ed3000-7f6eb7ed4000 ---p 00017000 08:11 57608063                   /lib/x86_64-linux-gnu/libgcc_s.so.1
+7f6eb7ed4000-7f6eb7ed5000 r--p 00017000 08:11 57608063                   /lib/x86_64-linux-gnu/libgcc_s.so.1
+7f6eb7ed5000-7f6eb7ed6000 rw-p 00018000 08:11 57608063                   /lib/x86_64-linux-gnu/libgcc_s.so.1
+7f6eb7ed6000-7f6eb7ee3000 r--p 00000000 08:11 57608070                   /lib/x86_64-linux-gnu/libm-2.28.so
+7f6eb7ee3000-7f6eb7f82000 r-xp 0000d000 08:11 57608070                   /lib/x86_64-linux-gnu/libm-2.28.so
+7f6eb7f82000-7f6eb8057000 r--p 000ac000 08:11 57608070                   /lib/x86_64-linux-gnu/libm-2.28.so
+7f6eb8057000-7f6eb8058000 r--p 00180000 08:11 57608070                   /lib/x86_64-linux-gnu/libm-2.28.so
+7f6eb8058000-7f6eb8059000 rw-p 00181000 08:11 57608070                   /lib/x86_64-linux-gnu/libm-2.28.so
+7f6eb8059000-7f6eb80ef000 r--p 00000000 08:11 21365329                   /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.28
+7f6eb80ef000-7f6eb81cb000 r-xp 00096000 08:11 21365329                   /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.28
+7f6eb81cb000-7f6eb8215000 r--p 00172000 08:11 21365329                   /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.28
+7f6eb8215000-7f6eb8220000 r--p 001bb000 08:11 21365329                   /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.28
+7f6eb8220000-7f6eb8223000 rw-p 001c6000 08:11 21365329                   /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.28
+7f6eb8223000-7f6eb8226000 rw-p 00000000 00:00 0 
+7f6eb8232000-7f6eb823b000 r--p 00000000 08:11 21365453                   /usr/local/lib/libjemalloc.so.2
+7f6eb823b000-7f6eb82e8000 r-xp 00009000 08:11 21365453                   /usr/local/lib/libjemalloc.so.2
+7f6eb82e8000-7f6eb82fe000 r--p 000b6000 08:11 21365453                   /usr/local/lib/libjemalloc.so.2
+7f6eb82fe000-7f6eb82ff000 ---p 000cc000 08:11 21365453                   /usr/local/lib/libjemalloc.so.2
+7f6eb82ff000-7f6eb8305000 r--p 000cc000 08:11 21365453                   /usr/local/lib/libjemalloc.so.2
+7f6eb8305000-7f6eb8306000 rw-p 000d2000 08:11 21365453                   /usr/local/lib/libjemalloc.so.2
+7f6eb8306000-7f6eb8529000 rw-p 00000000 00:00 0 
+7f6eb8529000-7f6eb852a000 r--p 00000000 08:11 57608033                   /lib/x86_64-linux-gnu/ld-2.28.so
+7f6eb852a000-7f6eb8548000 r-xp 00001000 08:11 57608033                   /lib/x86_64-linux-gnu/ld-2.28.so
+7f6eb8548000-7f6eb8550000 r--p 0001f000 08:11 57608033                   /lib/x86_64-linux-gnu/ld-2.28.so
+7f6eb8550000-7f6eb8551000 r--p 00026000 08:11 57608033                   /lib/x86_64-linux-gnu/ld-2.28.so
+7f6eb8551000-7f6eb8552000 rw-p 00027000 08:11 57608033                   /lib/x86_64-linux-gnu/ld-2.28.so
+7f6eb8552000-7f6eb8553000 rw-p 00000000 00:00 0 
+7fff7354f000-7fff73570000 rw-p 00000000 00:00 0                          [stack]
+7fff735ae000-7fff735b1000 r--p 00000000 00:00 0                          [vvar]
+7fff735b1000-7fff735b3000 r-xp 00000000 00:00 0                          [vdso]
+ffffffffff600000-ffffffffff601000 r-xp 00000000 00:00 0                  [vsyscall]
