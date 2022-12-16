@@ -9,13 +9,19 @@
 //           4      
     
 
+int check_bh(RB_Node *root) {
+    if (root == RB_Tree::nil) return 1;
+    int lbh = check_bh(root->left);
+    int rbh = check_bh(root->right);
+    assert(lbh == rbh);
+    return std::max(lbh, rbh) + (root->color == RB_Node::BLACK ? 1 : 0);
+}
+
 int main () {
     RB_Tree t;
-    t.insert(2);
-    t.insert(0);
-    t.insert(1);
-    t.insert(5);
-    t.insert(4);
+    for (int i = 0; i < 1000; ++i) {
+        t.insert(rand() % 1000);
+    }
     std::queue<RB_Node*> que;
     que.push(t.root);
     while (!que.empty()) {
@@ -27,12 +33,15 @@ int main () {
                 std::cout << "(nil) ";
                 continue;
             }
-            std::cout << "(" << cur->key << "," << (cur->color == RB_Node::BLACK ? "B" : "R") << ") ";
+            if (cur->color == RB_Node::RED)
+            assert(cur->color != cur->p->color);
+            std::cout << (cur->color == RB_Node::BLACK ? "B_" : "R_") << cur->key << ",";
             temp.push(cur->left);
             temp.push(cur->right);
         }
         que.swap(temp);
         std::cout << std::endl;
     }
+    check_bh(t.root);
     return 0;
 }
