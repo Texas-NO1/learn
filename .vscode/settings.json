@@ -91,6 +91,17 @@
         "socket": "cpp",
         "variant": "cpp",
         "scoped_allocator": "cpp",
-        "*.x": "cpp"
+        "*.x": "cpp",
+        "cassert": "cpp",
+        "bitset": "cpp",
+        "cfenv": "cpp",
+        "queue": "cpp",
+        "decimal": "cpp",
+        "coroutine": "cpp",
+        "any": "cpp",
+        "internet": "cpp",
+        "ranges": "cpp",
+        "span": "cpp",
+        "initlist93.C": "cpp"
     }
 }

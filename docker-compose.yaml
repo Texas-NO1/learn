@@ -2,7 +2,7 @@ version: "3.3"
 
 services:
   compute-env:
-    image: learn:0.0.1
+    image: registry.aibee.cn/mall/ae-build.cpu:1.0.0.snap-shot
     container_name: learn-qxai
     networks:
       extnetwork:
@@ -16,3 +16,9 @@ services:
       - bash
       - -c
       - tail -f /dev/null && wait
+networks:
+    extnetwork:
+        driver: bridge
+        ipam:
+            config:
+            - subnet: 171.111.0.0/16  

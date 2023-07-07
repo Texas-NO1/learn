@@ -1,24 +1,40 @@
 #include <iostream>
-#include <bits/char_traits.h>
+#include <map>
+#include <fstream>
+#include<vector>
+#include <algorithm>
+#include <future>
+#include <functional>
+#include <chrono>
 
-
-struct T {
-    static int CT;
-    int x = 123;
-    T() {
-        std::cout << "construct T " << ++CT << std::endl;
-    }
-    bool operator==(const T &t) const {
-        return x == t.x;
-    }
+class A {
+public:
+   void test(std::string &res) {
+      std::cout << "A test" << std::endl;
+   }
+   void test(std::string &res, int x) {
+      std::cout << "A test and int " << std::endl;
+   }
 };
-int T::CT = 0;
+
+typedef void (A::*ATestManyParam)(std::string&, int);
+
+class B {
+public:
+   A a;
+   void test() {
+      std::string temp = "asdf";
+      //成员函数bind
+      std::bind<ATestManyParam>(&A::test, &a, std::ref(temp), 123); // 方法一：指定函数类型模版参数
+      std::bind((ATestManyParam)&A::test, &a, std::ref(temp), 123); // 方法二：强制类型转换
+      auto f = std::bind<void (A::*)(std::string&, int)>(&A::test, &a, std::ref(temp), 123); // 方法三：指定函数类型模版参数（或强制类型转换）但不另定义函数指针类型
+      f();
+   }
+};
 
 int main () {
-    T *x = new T[10];
-    x[0].x = 123;
-
-    int l = std::char_traits<T>::length(x);
-    std::cout << l << std::endl;
-    return 0;
+   // B b;
+   // b.test();
+   
+   return 0;
 }

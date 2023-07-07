@@ -1,0 +1,36 @@
+//2.1.3
+for i = 1 to A.length
+if A[i] == v
+    return i
+return NIL
+
+//2.1.4
+低位在前，高位放在后
+A=<a1, a2, a3, ..., an>
+B=<b1, b2, b3, ..., bn>
+C=<c1, c2, c3, ..., cn, cn+1>
+例：100111 A=<1,1,1,0,0,1>
+
+overflow=0
+for i = 1 to n
+    sum = A[i] + B[i] + overflow
+    C[i] = sum % 2
+    overflow = sum / 2
+C[n + 1] = overflow
+
+//2.2.2
+A=<a1, a2, a3, ..., an>
+
+for j = 1 to n - 1
+    min = j
+    for i = j + 1 to n
+        if A[i] < A[min]
+            min = i
+    temp = A[j]
+    A[j] = A[min]
+    A[min] = temp
+
+//2.2.3
+A=<a1, a2, a3, ..., an>
+最坏情况，直到n才找到（或找到n仍找不到） O(n)
+平均情况，前j个里面找到的概率为1/n *(j-1) + 1/n = j/n = 0.5，j = n/2，O(n)
