@@ -102,6 +102,17 @@
         "internet": "cpp",
         "ranges": "cpp",
         "span": "cpp",
-        "initlist93.C": "cpp"
+        "initlist93.C": "cpp",
+        "strstream": "cpp",
+        "cuchar": "cpp",
+        "propagate_const": "cpp",
+        "source_location": "cpp",
+        "bool_set": "cpp",
+        "valarray": "cpp",
+        "charconv": "cpp",
+        "buffer": "cpp",
+        "io_context": "cpp",
+        "netfwd": "cpp",
+        "timer": "cpp"
     }
 }
