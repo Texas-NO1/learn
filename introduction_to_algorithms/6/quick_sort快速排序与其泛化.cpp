@@ -1,6 +1,19 @@
 #include <iostream>
 #include <vector>
 
+// 快排思路：
+// partition维护了4个区域，[p,i],[i+1,j][j+1,r-1],[r]
+// 1.[p,i]<=x
+// 2.[i+1,j]>x
+// 3.[j+1,r-1]无限制
+// 4.[r]=x
+// 初始i=p-1，[p,p-1]表示初始<=x的集合为空
+// 循环完成后[j+1,r-1]消失，只剩3个区域，[p,i]<=x,[i+1,r-1]>x,[r]=x
+// [p,i]都<=x，所以A[r]可以与A[i+1]交换位置，i+1即落入正确位置，使最后变成3个区域
+// 1.[p,i]<=x
+// 2.[i+1]=x，x已落入正确位置，返回i+1
+// 3.[i+2,r]>x
+
 int partition(std::vector<int> &A, int p, int r) {
     int x = A[r];
     int i = p - 1;
@@ -14,6 +27,7 @@ int partition(std::vector<int> &A, int p, int r) {
     return i + 1;
 }
 
+// 基础快排
 void quick_sort(std::vector<int> &A, int p, int r) {
     if (p < r) {
         int q = partition(A, p, r);
@@ -28,6 +42,7 @@ int partition_random(std::vector<int> &A, int p, int r) {
     return partition(A, p, r);
 }
 
+// 随机基准快排
 void quick_sort_radom(std::vector<int> &A, int p, int r) {
     if (p < r) {
         int q = partition(A, p, r);
@@ -36,6 +51,7 @@ void quick_sort_radom(std::vector<int> &A, int p, int r) {
     }
 }
 
+// 尾递归优化快排
 void tail_recursive_quick_sort(std::vector<int> &A, int p, int r) {
     while (p < r) {
         int q = partition(A, p, r);
