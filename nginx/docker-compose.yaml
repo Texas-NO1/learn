@@ -1,0 +1,10 @@
+version: '3.3'
+services:
+  nginx:
+    image: registry.aibee.cn/mall/nginx:1.17
+    container_name: nginx
+    ports:
+      - 80:80
+    volumes:
+      - ./config/nigix:/etc/nginx/conf.d
+    restart: always
