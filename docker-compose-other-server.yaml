@@ -1,0 +1,16 @@
+version: "3.3"
+
+services:
+  redis:
+    container_name: redis-learn
+    hostname: redis
+    image: registry.aibee.cn/mall/redis:6.0.8.2
+    networks:
+      extnetwork: 
+    restart: unless-stopped
+networks:
+    extnetwork:
+        driver: bridge
+        ipam:
+            config:
+            - subnet: 171.111.0.0/16  
