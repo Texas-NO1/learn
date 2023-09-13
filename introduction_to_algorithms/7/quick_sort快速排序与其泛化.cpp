@@ -45,7 +45,7 @@ int partition_random(std::vector<int> &A, int p, int r) {
 // 随机基准快排
 void quick_sort_radom(std::vector<int> &A, int p, int r) {
     if (p < r) {
-        int q = partition(A, p, r);
+        int q = partition_random(A, p, r);
         quick_sort(A, p, q - 1);
         quick_sort(A, q + 1, r);
     }
@@ -64,8 +64,8 @@ int main () {
     std::vector<int> A;
     for (int i = 0; i < 10; ++i) A.push_back(rand() % 1000);
     // quick_sort(A, 0, A.size() - 1);
-    // quick_sort_radom(A, 0, A.size() - 1);
-    tail_recursive_quick_sort(A, 0, A.size() - 1);
+    quick_sort_radom(A, 0, A.size() - 1);
+    // tail_recursive_quick_sort(A, 0, A.size() - 1);
     for (int i = 0; i < 10; ++i) std::cout << A[i] << ",";
     std::cout << std::endl;
     return 0;
