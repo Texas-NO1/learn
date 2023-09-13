@@ -8,16 +8,19 @@
 
 using namespace sw::redis;
 
-void test(std::string id, Redis &redis) {
+void test(std::string id) {
+    auto redis = Redis("tcp://redis:6379");
+    std::string key = "uniqe-lock";
     bool get_lock = false;
     while (!get_lock) {
-        get_lock = redis.setnx("lock", "true");
+        // get_lock = redis.setnx(key, "true"); // without ttl
+        get_lock = redis.set(key, "true", std::chrono::milliseconds(1*60*60*1000), UpdateType::NOT_EXIST);
         std::this_thread::sleep_for(std::chrono::milliseconds(1));
     }
     std::cout << id << " get lock, do something...\n";
     std::this_thread::sleep_for(std::chrono::seconds(3));
 
-    auto res1 = redis.del("lock");
+    auto res1 = redis.del(key);
     if (res1) {
         std::cout << id << " release lock\n";
     } else {
@@ -27,10 +30,9 @@ void test(std::string id, Redis &redis) {
 
 int main () {
     std::string pid = std::to_string(getpid());
-    auto redis = Redis("tcp://redis:6379");
     std::vector<std::thread> ts;
     for (int i = 0; i < 10; ++i) {
-        ts.push_back(std::thread(test, pid + "-" + std::to_string(i), std::ref(redis)));
+        ts.push_back(std::thread(test, pid + "-" + std::to_string(i)));
     }
     for (auto &t : ts) t.join();
 
