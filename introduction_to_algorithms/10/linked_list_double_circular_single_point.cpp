@@ -100,6 +100,17 @@ struct List {
         }
         std::cout << std::endl;
     }
+
+    void reverse() {
+        // 使用三个数交换值
+        Node *tmp = head;
+        head = tail;
+        tail = tmp;
+        // 使用与或运算交换值
+        // head = (Node*)((uint64_t)head ^ (uint64_t)tail);
+        // tail = (Node*)((uint64_t)head ^ (uint64_t)tail);
+        // head = (Node*)((uint64_t)head ^ (uint64_t)tail);
+    }
 };
 
 int main () {
@@ -108,7 +119,11 @@ int main () {
         l.insert(new Node(i));
     }
     l.output();
-
-
+    l.reverse();
+    l.output();
+    Node* res = l.search(5);
+    std::cout << "remove " << l.single_node_str(res) << std::endl;
+    l.remove(res);
+    l.output();
     return 0;
 }

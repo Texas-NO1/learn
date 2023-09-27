@@ -13,7 +13,10 @@ int main () {
     // std::cout << j.empty() << " " << j.size() << std::endl;
     // std::ofstream ou("test.json");
     // ou << j;
-
-    std::cout << (2^2) << std::endl;
+    std::vector<int> v;
+    v.push_back(1);
+    std::cout << v.size() << std::endl;
+    v.pop_back();
+    std::cout << v.size() << std::endl;
     return 0;
 }
