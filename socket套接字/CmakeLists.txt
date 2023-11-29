@@ -1,0 +1,22 @@
+cmake_minimum_required(VERSION 3.0)
+project(socket_practice)
+
+add_executable(
+    example_client
+    example/client.c
+)
+
+add_executable(
+    example_server
+    example/server.c
+)
+
+add_executable(
+    server
+    server.cpp
+)
+
+add_executable(
+    client
+    client.cpp
+)

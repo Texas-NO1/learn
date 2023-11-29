@@ -1,0 +1,1 @@
+/usr/bin/cc   -rdynamic CMakeFiles/example_client.dir/example/client.c.o  -o example_client 

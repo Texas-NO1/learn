@@ -1,0 +1,26 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/app/socket套接字/client.cpp
+sys/socket.h
+-
+sys/types.h
+-
+netinet/in.h
+-
+fcntl.h
+-
+stdio.h
+-
+unistd.h
+-
+cassert
+-
+iostream
+-
+
