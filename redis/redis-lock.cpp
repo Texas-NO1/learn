@@ -8,6 +8,12 @@
 
 using namespace sw::redis;
 
+void release() {
+    auto redis = Redis("tcp://redis:6379");
+    std::string key = "uniqe-lock";
+    redis.del(key);
+}
+
 void test(std::string id) {
     auto redis = Redis("tcp://redis:6379");
     std::string key = "uniqe-lock";
@@ -29,6 +35,7 @@ void test(std::string id) {
 }
 
 int main () {
+    release();
     std::string pid = std::to_string(getpid());
     std::vector<std::thread> ts;
     for (int i = 0; i < 10; ++i) {

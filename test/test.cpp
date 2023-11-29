@@ -6,6 +6,7 @@
 #include <unordered_map>
 #include <ctime>
 #include <iomanip>
+#include <yaml-cpp/yaml.h>
 
 // using nlohmann::json;
 int main () {
@@ -42,9 +43,18 @@ int main () {
     // printf("%p\n", &z);
     // int i = 2;
     // printf("%p\n", &i);
-    std::string s = "";
-    for (char x : s) std::cout << int(x) << std::endl;
-    std::cout << s.size() << std::endl;
-    std::cout << s << std::endl;
+    // std::string s = "";
+    // for (char x : s) std::cout << int(x) << std::endl;
+    // std::cout << s.size() << std::endl;
+    // std::cout << s << std::endl;
+    YAML::Node node;
+    try {
+    node.IsScalar();
+    std::cout << node.IsNull() << std::endl;
+    std::cout << node["ssf"].IsDefined() << std::endl;
+    std::string next = node["ssf"].as<std::string>();
+    } catch (std::exception &e) {
+        std::cout << e.what() << std::endl;
+    }
     return 0;
 }
