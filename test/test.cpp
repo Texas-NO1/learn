@@ -47,14 +47,16 @@ int main () {
     // for (char x : s) std::cout << int(x) << std::endl;
     // std::cout << s.size() << std::endl;
     // std::cout << s << std::endl;
-    YAML::Node node;
-    try {
-    node.IsScalar();
-    std::cout << node.IsNull() << std::endl;
-    std::cout << node["ssf"].IsDefined() << std::endl;
-    std::string next = node["ssf"].as<std::string>();
-    } catch (std::exception &e) {
-        std::cout << e.what() << std::endl;
-    }
+    // YAML::Node node;
+    // try {
+    // node.IsScalar();
+    // std::cout << node.IsNull() << std::endl;
+    // std::cout << node["ssf"].IsDefined() << std::endl;
+    // std::string next = node["ssf"].as<std::string>();
+    // } catch (std::exception &e) {
+    //     std::cout << e.what() << std::endl;
+    // }
+    std::string s = "x";
+    std::cout << s << std::endl;
     return 0;
 }

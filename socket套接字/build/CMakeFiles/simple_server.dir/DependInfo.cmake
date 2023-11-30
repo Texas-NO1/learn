@@ -1,15 +1,15 @@
 # The set of languages for which implicit dependencies are needed:
 set(CMAKE_DEPENDS_LANGUAGES
-  "C"
+  "CXX"
   )
 # The set of files for implicit dependencies of each language:
-set(CMAKE_DEPENDS_CHECK_C
-  "/app/socket套接字/simple/server.c" "/app/socket套接字/build/CMakeFiles/simple_server.dir/simple/server.c.o"
+set(CMAKE_DEPENDS_CHECK_CXX
+  "/app/socket套接字/simple_server.cpp" "/app/socket套接字/build/CMakeFiles/simple_server.dir/simple_server.cpp.o"
   )
-set(CMAKE_C_COMPILER_ID "GNU")
+set(CMAKE_CXX_COMPILER_ID "GNU")
 
 # The include file search paths:
-set(CMAKE_C_TARGET_INCLUDE_PATH
+set(CMAKE_CXX_TARGET_INCLUDE_PATH
   )
 
 # Targets to which this target links.

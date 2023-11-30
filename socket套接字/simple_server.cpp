@@ -15,7 +15,7 @@ int main () {
     std::string location = "/proc/" + std::to_string(pid) + "/fd";
     printf("socket location may in %s\n", location.data());
 
-    int fd = socket(AF_INET, SOCK_STREAM, 0); // 1. 创建套接字
+    int fd = socket(AF_INET, SOCK_STREAM, 0); // 1. 创建套接字TCP/IP协议
     printf("server fd is %d\n", fd);
     assert(fd >= 0);
     int status = 0;
@@ -38,14 +38,15 @@ int main () {
     // 5. 测试指定s_addr（可能是防火墙）
     while (true) {
         struct sockaddr_in conn_addr;
-        socklen_t conn_size = sizeof(conn_addr);
-        // conn_size是否为传出参数？
+        socklen_t conn_size;
+        // conn_size为传出参数
         int conn_fd = accept(fd, (sockaddr *)&conn_addr, &conn_size); // 5. 接收套接字连接，返回的是新套接字
         printf("connection fd is %d conn_size %d\n", conn_fd, conn_size);
         assert(conn_fd >= 0);
         char buff[100];
-        status = read(conn_fd, buff, sizeof(buff)); // 6. 从连接的套接字读取数据到buff
-        printf("%s\n", buff);
+        int cnt = read(conn_fd, buff, sizeof(buff)); // 6. 从连接的套接字读取数据到buff
+        buff[cnt] = '\0';
+        printf("read %d chars: %s\n", cnt, buff);
         assert(status >= 0);
         std::string res;
         std::cin >> res;

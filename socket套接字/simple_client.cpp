@@ -15,7 +15,7 @@ int main () {
     std::string location = "/proc/" + std::to_string(pid) + "/fd";
     printf("socket location may in %s\n", location.data());
     
-    int fd = socket(AF_INET, SOCK_STREAM, 0); // 1. 创建套接字
+    int fd = socket(AF_INET, SOCK_STREAM, 0); // 1. 创建套接字TCP/IP协议
     int status = 0;
     assert(fd >= 0);
     struct sockaddr_in server_addr;
@@ -29,9 +29,10 @@ int main () {
     status = write(fd, input.data(), input.size()); // 3. 写数据到套接字
     assert(status >= 0);
     char buff[100];
-    status = read(fd, buff, sizeof(buff)); // 4. 从连接的套接字读取数据到buff
-    assert(status >= 0);
-    printf("%s\n", buff);
+    int cnt = read(fd, buff, sizeof(buff) - 1); // 4. 从连接的套接字读取数据到buff
+    assert(cnt >= 0);
+    buff[cnt] = '\0';
+    printf("read %d chars: %s\n", cnt, buff);
     status = close(fd); // 5. 关闭客户端套接字
     assert(status >= 0);
     return 0;

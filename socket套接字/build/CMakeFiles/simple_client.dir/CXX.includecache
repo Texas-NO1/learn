@@ -6,10 +6,10 @@
 
 #IncludeRegexTransform: 
 
-/app/socket套接字/simple/server.c
-sys/types.h
--
+/app/socket套接字/simple_client.cpp
 sys/socket.h
+-
+sys/types.h
 -
 netinet/in.h
 -
@@ -17,10 +17,10 @@ fcntl.h
 -
 stdio.h
 -
-string.h
--
-stdlib.h
--
 unistd.h
+-
+cassert
+-
+iostream
 -
 

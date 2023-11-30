@@ -1,6 +1,8 @@
-/app/socket套接字/build/CMakeFiles/rebuild_cache.dir
 /app/socket套接字/build/CMakeFiles/edit_cache.dir
-/app/socket套接字/build/CMakeFiles/server.dir
-/app/socket套接字/build/CMakeFiles/client.dir
+/app/socket套接字/build/CMakeFiles/complex_server.dir
+/app/socket套接字/build/CMakeFiles/rebuild_cache.dir
+/app/socket套接字/build/CMakeFiles/complex_client.dir
+/app/socket套接字/build/CMakeFiles/simple_server.dir
+/app/socket套接字/build/CMakeFiles/simple_client.dir
 /app/socket套接字/build/CMakeFiles/example_server.dir
 /app/socket套接字/build/CMakeFiles/example_client.dir

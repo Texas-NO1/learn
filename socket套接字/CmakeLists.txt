@@ -12,11 +12,21 @@ add_executable(
 )
 
 add_executable(
-    server
-    server.cpp
+    simple_client
+    simple_client.cpp
 )
 
 add_executable(
-    client
-    client.cpp
+    simple_server
+    simple_server.cpp
+)
+
+add_executable(
+    complex_client
+    complex_client.cpp
+)
+
+add_executable(
+    complex_server
+    complex_server.cpp
 )
