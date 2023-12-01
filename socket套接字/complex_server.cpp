@@ -9,7 +9,9 @@
 #include <signal.h>
 #include <arpa/inet.h>
 #include <unordered_set>
-#include "thread_pool.hpp"
+#include <vector>
+#include <thread>
+// #include <sys/epoll.h> // TODO多路复用（当前策略为一个客户端连接一个线程监听，连接过多时不可用）
 
 bool running;
 void signalHandler(int signal) {

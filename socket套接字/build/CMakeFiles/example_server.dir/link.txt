@@ -1,1 +1,0 @@
-/usr/bin/cc   -rdynamic CMakeFiles/example_server.dir/example/server.c.o  -o example_server  -lpthread 

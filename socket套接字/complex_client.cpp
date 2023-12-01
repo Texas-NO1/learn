@@ -8,7 +8,8 @@
 #include <iostream>
 #include <signal.h>
 #include <arpa/inet.h>
-#include "thread_pool.hpp"
+#include <thread>
+#include <vector>
 
 bool running;
 void signalHandler(int signal) {
@@ -97,6 +98,7 @@ int main () {
     signal(SIGKILL, signalHandler); // 不能捕捉
     running = true;
     Client client("qxai-client-" + std::to_string(getpid()), "0.0.0.0", 12345);
+    // Client client("qxai-client-" + std::to_string(getpid()), "47.100.220.86", 12345);
     client.continueReading();
     while (running) {
         printf("Say: ");

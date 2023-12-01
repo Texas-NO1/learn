@@ -53,12 +53,14 @@ CMAKE_BINARY_DIR = /app/socket套接字/build
 # Directory level rules for the build root directory
 
 # The main recursive "all" target.
+all: CMakeFiles/simple_client.dir/all
+all: CMakeFiles/server.dir/all
+all: CMakeFiles/client.dir/all
 all: CMakeFiles/complex_server.dir/all
 all: CMakeFiles/complex_client.dir/all
+all: CMakeFiles/CMakeCXXCompilerId.dir/all
 all: CMakeFiles/simple_server.dir/all
-all: CMakeFiles/simple_client.dir/all
-all: CMakeFiles/example_server.dir/all
-all: CMakeFiles/example_client.dir/all
+all: CMakeFiles/CMakeCCompilerId.dir/all
 
 .PHONY : all
 
@@ -68,14 +70,97 @@ preinstall:
 .PHONY : preinstall
 
 # The main recursive "clean" target.
+clean: CMakeFiles/simple_client.dir/clean
+clean: CMakeFiles/server.dir/clean
+clean: CMakeFiles/client.dir/clean
 clean: CMakeFiles/complex_server.dir/clean
 clean: CMakeFiles/complex_client.dir/clean
+clean: CMakeFiles/CMakeCXXCompilerId.dir/clean
 clean: CMakeFiles/simple_server.dir/clean
-clean: CMakeFiles/simple_client.dir/clean
-clean: CMakeFiles/example_server.dir/clean
-clean: CMakeFiles/example_client.dir/clean
+clean: CMakeFiles/CMakeCCompilerId.dir/clean
 
 .PHONY : clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/simple_client.dir
+
+# All Build rule for target.
+CMakeFiles/simple_client.dir/all:
+	$(MAKE) -f CMakeFiles/simple_client.dir/build.make CMakeFiles/simple_client.dir/depend
+	$(MAKE) -f CMakeFiles/simple_client.dir/build.make CMakeFiles/simple_client.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/app/socket套接字/build/CMakeFiles --progress-num=13,14 "Built target simple_client"
+.PHONY : CMakeFiles/simple_client.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/simple_client.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /app/socket套接字/build/CMakeFiles 2
+	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/simple_client.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /app/socket套接字/build/CMakeFiles 0
+.PHONY : CMakeFiles/simple_client.dir/rule
+
+# Convenience name for target.
+simple_client: CMakeFiles/simple_client.dir/rule
+
+.PHONY : simple_client
+
+# clean rule for target.
+CMakeFiles/simple_client.dir/clean:
+	$(MAKE) -f CMakeFiles/simple_client.dir/build.make CMakeFiles/simple_client.dir/clean
+.PHONY : CMakeFiles/simple_client.dir/clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/server.dir
+
+# All Build rule for target.
+CMakeFiles/server.dir/all:
+	$(MAKE) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/depend
+	$(MAKE) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/app/socket套接字/build/CMakeFiles --progress-num=11,12 "Built target server"
+.PHONY : CMakeFiles/server.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/server.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /app/socket套接字/build/CMakeFiles 2
+	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/server.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /app/socket套接字/build/CMakeFiles 0
+.PHONY : CMakeFiles/server.dir/rule
+
+# Convenience name for target.
+server: CMakeFiles/server.dir/rule
+
+.PHONY : server
+
+# clean rule for target.
+CMakeFiles/server.dir/clean:
+	$(MAKE) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/clean
+.PHONY : CMakeFiles/server.dir/clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/client.dir
+
+# All Build rule for target.
+CMakeFiles/client.dir/all:
+	$(MAKE) -f CMakeFiles/client.dir/build.make CMakeFiles/client.dir/depend
+	$(MAKE) -f CMakeFiles/client.dir/build.make CMakeFiles/client.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/app/socket套接字/build/CMakeFiles --progress-num=5,6 "Built target client"
+.PHONY : CMakeFiles/client.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/client.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /app/socket套接字/build/CMakeFiles 2
+	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/client.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /app/socket套接字/build/CMakeFiles 0
+.PHONY : CMakeFiles/client.dir/rule
+
+# Convenience name for target.
+client: CMakeFiles/client.dir/rule
+
+.PHONY : client
+
+# clean rule for target.
+CMakeFiles/client.dir/clean:
+	$(MAKE) -f CMakeFiles/client.dir/build.make CMakeFiles/client.dir/clean
+.PHONY : CMakeFiles/client.dir/clean
 
 #=============================================================================
 # Target rules for target CMakeFiles/complex_server.dir
@@ -84,7 +169,7 @@ clean: CMakeFiles/example_client.dir/clean
 CMakeFiles/complex_server.dir/all:
 	$(MAKE) -f CMakeFiles/complex_server.dir/build.make CMakeFiles/complex_server.dir/depend
 	$(MAKE) -f CMakeFiles/complex_server.dir/build.make CMakeFiles/complex_server.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/app/socket套接字/build/CMakeFiles --progress-num=3,4 "Built target complex_server"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/app/socket套接字/build/CMakeFiles --progress-num=9,10 "Built target complex_server"
 .PHONY : CMakeFiles/complex_server.dir/all
 
 # Build rule for subdir invocation for target.
@@ -111,7 +196,7 @@ CMakeFiles/complex_server.dir/clean:
 CMakeFiles/complex_client.dir/all:
 	$(MAKE) -f CMakeFiles/complex_client.dir/build.make CMakeFiles/complex_client.dir/depend
 	$(MAKE) -f CMakeFiles/complex_client.dir/build.make CMakeFiles/complex_client.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/app/socket套接字/build/CMakeFiles --progress-num=1,2 "Built target complex_client"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/app/socket套接字/build/CMakeFiles --progress-num=7,8 "Built target complex_client"
 .PHONY : CMakeFiles/complex_client.dir/all
 
 # Build rule for subdir invocation for target.
@@ -132,13 +217,40 @@ CMakeFiles/complex_client.dir/clean:
 .PHONY : CMakeFiles/complex_client.dir/clean
 
 #=============================================================================
+# Target rules for target CMakeFiles/CMakeCXXCompilerId.dir
+
+# All Build rule for target.
+CMakeFiles/CMakeCXXCompilerId.dir/all:
+	$(MAKE) -f CMakeFiles/CMakeCXXCompilerId.dir/build.make CMakeFiles/CMakeCXXCompilerId.dir/depend
+	$(MAKE) -f CMakeFiles/CMakeCXXCompilerId.dir/build.make CMakeFiles/CMakeCXXCompilerId.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/app/socket套接字/build/CMakeFiles --progress-num=3,4 "Built target CMakeCXXCompilerId"
+.PHONY : CMakeFiles/CMakeCXXCompilerId.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/CMakeCXXCompilerId.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /app/socket套接字/build/CMakeFiles 2
+	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/CMakeCXXCompilerId.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /app/socket套接字/build/CMakeFiles 0
+.PHONY : CMakeFiles/CMakeCXXCompilerId.dir/rule
+
+# Convenience name for target.
+CMakeCXXCompilerId: CMakeFiles/CMakeCXXCompilerId.dir/rule
+
+.PHONY : CMakeCXXCompilerId
+
+# clean rule for target.
+CMakeFiles/CMakeCXXCompilerId.dir/clean:
+	$(MAKE) -f CMakeFiles/CMakeCXXCompilerId.dir/build.make CMakeFiles/CMakeCXXCompilerId.dir/clean
+.PHONY : CMakeFiles/CMakeCXXCompilerId.dir/clean
+
+#=============================================================================
 # Target rules for target CMakeFiles/simple_server.dir
 
 # All Build rule for target.
 CMakeFiles/simple_server.dir/all:
 	$(MAKE) -f CMakeFiles/simple_server.dir/build.make CMakeFiles/simple_server.dir/depend
 	$(MAKE) -f CMakeFiles/simple_server.dir/build.make CMakeFiles/simple_server.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/app/socket套接字/build/CMakeFiles --progress-num=11,12 "Built target simple_server"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/app/socket套接字/build/CMakeFiles --progress-num=15,16 "Built target simple_server"
 .PHONY : CMakeFiles/simple_server.dir/all
 
 # Build rule for subdir invocation for target.
@@ -159,85 +271,31 @@ CMakeFiles/simple_server.dir/clean:
 .PHONY : CMakeFiles/simple_server.dir/clean
 
 #=============================================================================
-# Target rules for target CMakeFiles/simple_client.dir
+# Target rules for target CMakeFiles/CMakeCCompilerId.dir
 
 # All Build rule for target.
-CMakeFiles/simple_client.dir/all:
-	$(MAKE) -f CMakeFiles/simple_client.dir/build.make CMakeFiles/simple_client.dir/depend
-	$(MAKE) -f CMakeFiles/simple_client.dir/build.make CMakeFiles/simple_client.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/app/socket套接字/build/CMakeFiles --progress-num=9,10 "Built target simple_client"
-.PHONY : CMakeFiles/simple_client.dir/all
+CMakeFiles/CMakeCCompilerId.dir/all:
+	$(MAKE) -f CMakeFiles/CMakeCCompilerId.dir/build.make CMakeFiles/CMakeCCompilerId.dir/depend
+	$(MAKE) -f CMakeFiles/CMakeCCompilerId.dir/build.make CMakeFiles/CMakeCCompilerId.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/app/socket套接字/build/CMakeFiles --progress-num=1,2 "Built target CMakeCCompilerId"
+.PHONY : CMakeFiles/CMakeCCompilerId.dir/all
 
 # Build rule for subdir invocation for target.
-CMakeFiles/simple_client.dir/rule: cmake_check_build_system
+CMakeFiles/CMakeCCompilerId.dir/rule: cmake_check_build_system
 	$(CMAKE_COMMAND) -E cmake_progress_start /app/socket套接字/build/CMakeFiles 2
-	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/simple_client.dir/all
+	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/CMakeCCompilerId.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /app/socket套接字/build/CMakeFiles 0
-.PHONY : CMakeFiles/simple_client.dir/rule
+.PHONY : CMakeFiles/CMakeCCompilerId.dir/rule
 
 # Convenience name for target.
-simple_client: CMakeFiles/simple_client.dir/rule
+CMakeCCompilerId: CMakeFiles/CMakeCCompilerId.dir/rule
 
-.PHONY : simple_client
-
-# clean rule for target.
-CMakeFiles/simple_client.dir/clean:
-	$(MAKE) -f CMakeFiles/simple_client.dir/build.make CMakeFiles/simple_client.dir/clean
-.PHONY : CMakeFiles/simple_client.dir/clean
-
-#=============================================================================
-# Target rules for target CMakeFiles/example_server.dir
-
-# All Build rule for target.
-CMakeFiles/example_server.dir/all:
-	$(MAKE) -f CMakeFiles/example_server.dir/build.make CMakeFiles/example_server.dir/depend
-	$(MAKE) -f CMakeFiles/example_server.dir/build.make CMakeFiles/example_server.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/app/socket套接字/build/CMakeFiles --progress-num=7,8 "Built target example_server"
-.PHONY : CMakeFiles/example_server.dir/all
-
-# Build rule for subdir invocation for target.
-CMakeFiles/example_server.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /app/socket套接字/build/CMakeFiles 2
-	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/example_server.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /app/socket套接字/build/CMakeFiles 0
-.PHONY : CMakeFiles/example_server.dir/rule
-
-# Convenience name for target.
-example_server: CMakeFiles/example_server.dir/rule
-
-.PHONY : example_server
+.PHONY : CMakeCCompilerId
 
 # clean rule for target.
-CMakeFiles/example_server.dir/clean:
-	$(MAKE) -f CMakeFiles/example_server.dir/build.make CMakeFiles/example_server.dir/clean
-.PHONY : CMakeFiles/example_server.dir/clean
-
-#=============================================================================
-# Target rules for target CMakeFiles/example_client.dir
-
-# All Build rule for target.
-CMakeFiles/example_client.dir/all:
-	$(MAKE) -f CMakeFiles/example_client.dir/build.make CMakeFiles/example_client.dir/depend
-	$(MAKE) -f CMakeFiles/example_client.dir/build.make CMakeFiles/example_client.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/app/socket套接字/build/CMakeFiles --progress-num=5,6 "Built target example_client"
-.PHONY : CMakeFiles/example_client.dir/all
-
-# Build rule for subdir invocation for target.
-CMakeFiles/example_client.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /app/socket套接字/build/CMakeFiles 2
-	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/example_client.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /app/socket套接字/build/CMakeFiles 0
-.PHONY : CMakeFiles/example_client.dir/rule
-
-# Convenience name for target.
-example_client: CMakeFiles/example_client.dir/rule
-
-.PHONY : example_client
-
-# clean rule for target.
-CMakeFiles/example_client.dir/clean:
-	$(MAKE) -f CMakeFiles/example_client.dir/build.make CMakeFiles/example_client.dir/clean
-.PHONY : CMakeFiles/example_client.dir/clean
+CMakeFiles/CMakeCCompilerId.dir/clean:
+	$(MAKE) -f CMakeFiles/CMakeCCompilerId.dir/build.make CMakeFiles/CMakeCCompilerId.dir/clean
+.PHONY : CMakeFiles/CMakeCCompilerId.dir/clean
 
 #=============================================================================
 # Special targets to cleanup operation of make.

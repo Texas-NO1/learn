@@ -5,33 +5,42 @@ link_libraries(
     pthread
 )
 
-add_executable(
-    example_client
-    example/client.c
-)
+file(GLOB_RECURSE TARGETS ${CMAKE_SOURCE_DIR}/*.c ${CMAKE_SOURCE_DIR}/*.cpp)
+foreach(TARGET ${TARGETS})
+    STRING(REGEX REPLACE ".+/(.+)\\..*" "\\1" EXE ${TARGET})
+    set (EXE ${EXE})
+    message("-- ADD ${EXE} ${TARGET}")
+    add_executable(${EXE} ${TARGET})
+endforeach(TARGET ${TARGETS})
 
-add_executable(
-    example_server
-    example/server.c
-)
 
-add_executable(
-    simple_client
-    simple_client.cpp
-)
+# add_executable(
+#     example_client
+#     example/client.c
+# )
 
-add_executable(
-    simple_server
-    simple_server.cpp
-)
+# add_executable(
+#     example_server
+#     example/server.c
+# )
 
-add_executable(
-    complex_client
-    complex_client.cpp
-)
+# add_executable(
+#     simple_client
+#     simple_client.cpp
+# )
 
-add_executable(
-    complex_server
-    complex_server.cpp
-)
-# TODO static build
+# add_executable(
+#     simple_server
+#     simple_server.cpp
+# )
+
+# add_executable(
+#     complex_client
+#     complex_client.cpp
+# )
+
+# add_executable(
+#     complex_server
+#     complex_server.cpp
+# )
+# # TODO static build
