@@ -125,9 +125,10 @@ public:
 
     // 等待连接
     void waitting() {
+        int new_fd = accept(fd, nullptr, nullptr); // 这里addr可能获取不到，直接从fd中getsockname
         struct sockaddr_in addr;
         socklen_t size = 0;
-        int new_fd = accept(fd, (struct sockaddr*)&addr, &size);
+        getsockname(new_fd, (sockaddr *)&addr, &size);
         assert(new_fd >= 0);
         std::string client_addr = inet_ntoa(addr.sin_addr);
         client_addr += ":" + std::to_string(addr.sin_port);
