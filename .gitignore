@@ -4,5 +4,6 @@
 *.out
 *.a
 *.so
+build
 sh
 jenkins/build
