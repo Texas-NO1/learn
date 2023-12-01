@@ -1,1 +1,1 @@
-/usr/bin/c++    -rdynamic CMakeFiles/simple_server.dir/simple_server.cpp.o  -o simple_server 
+/usr/bin/c++    -rdynamic CMakeFiles/simple_server.dir/simple_server.cpp.o  -o simple_server  -lpthread 

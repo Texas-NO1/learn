@@ -1,6 +1,10 @@
 cmake_minimum_required(VERSION 3.0)
 project(socket_practice)
 
+link_libraries(
+    pthread
+)
+
 add_executable(
     example_client
     example/client.c
@@ -30,3 +34,4 @@ add_executable(
     complex_server
     complex_server.cpp
 )
+# TODO static build

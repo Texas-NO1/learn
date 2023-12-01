@@ -25,8 +25,11 @@ private:
     int fd; // socket文件描述符
     int pid; // 进程pid
     std::string name; // 给client一个名字
+    bool is_connected; // 保持连接
+    std::thread reading_thread; // 持续读
 public:
     Client(std::string name, std::string host, int port) {
+        this->name = name;
         pid = getpid();
         printf("Create new Client name %s, pid %d\n", name.data(), pid);
         fd = socket(AF_INET, SOCK_STREAM, 0); // 1. 创建套接字TCP/IP协议
@@ -43,26 +46,47 @@ public:
         assert(status != 0);
         status = connect(fd, (struct sockaddr*)&server_addr, sizeof(server_addr)); // 2. 使用套接字连接server
         assert(status >= 0);
+        is_connected = true;
     }
 
-    std::string read(int read_batch = 100) { // 一次读多少字符
-        std::string receive(read_batch, '\0');
-        int status = ::read(fd, (void *)receive.data(), receive.size()); // 4. 从连接的套接字读取数据到buff
+    bool read(std::string &receive, int read_batch = 100) { // 一次读多少字符
+        std::string rec(read_batch, 0);
+        // printf("s\n");
+        int cnt = ::read(fd, (void *)rec.data(), rec.size()); // 4. 从连接的套接字读取数据到buff
+        // printf("e\n");
+        assert(cnt >= 0);
+        receive = rec.substr(0, cnt);
+        // printf("rec %d chars\n", cnt);
+        return cnt == 0;
+    }
+
+    void continueReading() {
+        reading_thread = std::thread([this] {
+            while (this->is_connected) {
+                // printf("reading\n");
+                std::string msg;
+                if (this->read(msg)) close(); // connaction close since socket closed
+                if (!msg.empty()) 
+                    printf("\n%s\n", msg.data());
+            }
+        });
+    }
+
+    void close() {
+        is_connected = false;
+        printf("Destroy client, close fd %d\n", fd);
+        int status = ::close(fd);
         assert(status >= 0);
-        return receive;
     }
 
     void write(std::string input) {
         input = name + ": " + input;
         int status = ::write(fd, input.data(), input.size()); // 3. 写数据到套接字
+        // printf("write res %d\n", status);
         assert(status >= 0);
     }
 
-    ~Client() {
-        printf("Destroy client, close fd %d\n", fd);
-        int status = close(fd);
-        assert(status >= 0);
-    }
+    ~Client() {}
 };
 
 int main () {
@@ -72,8 +96,10 @@ int main () {
     signal(SIGABRT, signalHandler);
     signal(SIGKILL, signalHandler); // 不能捕捉
     running = true;
-    Client client("qxai01", "0.0.0.0", 12345);
+    Client client("qxai-client-" + std::to_string(getpid()), "0.0.0.0", 12345);
+    client.continueReading();
     while (running) {
+        printf("Say: ");
         std::string input;
         std::cin >> input;
         client.write(input);
