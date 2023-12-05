@@ -6,7 +6,7 @@
 
 #IncludeRegexTransform: 
 
-/app/socket套接字/complex_server.cpp
+/app/socket套接字/complex/complex_server.cpp
 sys/socket.h
 -
 sys/types.h
@@ -28,5 +28,9 @@ signal.h
 arpa/inet.h
 -
 unordered_set
+-
+vector
+-
+thread
 -
 

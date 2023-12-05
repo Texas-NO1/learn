@@ -6,7 +6,7 @@
 
 #IncludeRegexTransform: 
 
-/app/socket套接字/simple_server.cpp
+/app/socket套接字/simple/simple_server.cpp
 sys/socket.h
 -
 sys/types.h

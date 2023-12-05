@@ -57,27 +57,27 @@ include CMakeFiles/simple_server.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/simple_server.dir/flags.make
 
-CMakeFiles/simple_server.dir/simple_server.cpp.o: CMakeFiles/simple_server.dir/flags.make
-CMakeFiles/simple_server.dir/simple_server.cpp.o: ../simple_server.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/app/socket套接字/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/simple_server.dir/simple_server.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/simple_server.dir/simple_server.cpp.o -c /app/socket套接字/simple_server.cpp
+CMakeFiles/simple_server.dir/simple/simple_server.cpp.o: CMakeFiles/simple_server.dir/flags.make
+CMakeFiles/simple_server.dir/simple/simple_server.cpp.o: ../simple/simple_server.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/app/socket套接字/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/simple_server.dir/simple/simple_server.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/simple_server.dir/simple/simple_server.cpp.o -c /app/socket套接字/simple/simple_server.cpp
 
-CMakeFiles/simple_server.dir/simple_server.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/simple_server.dir/simple_server.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /app/socket套接字/simple_server.cpp > CMakeFiles/simple_server.dir/simple_server.cpp.i
+CMakeFiles/simple_server.dir/simple/simple_server.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/simple_server.dir/simple/simple_server.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /app/socket套接字/simple/simple_server.cpp > CMakeFiles/simple_server.dir/simple/simple_server.cpp.i
 
-CMakeFiles/simple_server.dir/simple_server.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/simple_server.dir/simple_server.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /app/socket套接字/simple_server.cpp -o CMakeFiles/simple_server.dir/simple_server.cpp.s
+CMakeFiles/simple_server.dir/simple/simple_server.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/simple_server.dir/simple/simple_server.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /app/socket套接字/simple/simple_server.cpp -o CMakeFiles/simple_server.dir/simple/simple_server.cpp.s
 
 # Object files for target simple_server
 simple_server_OBJECTS = \
-"CMakeFiles/simple_server.dir/simple_server.cpp.o"
+"CMakeFiles/simple_server.dir/simple/simple_server.cpp.o"
 
 # External object files for target simple_server
 simple_server_EXTERNAL_OBJECTS =
 
-simple_server: CMakeFiles/simple_server.dir/simple_server.cpp.o
+simple_server: CMakeFiles/simple_server.dir/simple/simple_server.cpp.o
 simple_server: CMakeFiles/simple_server.dir/build.make
 simple_server: CMakeFiles/simple_server.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/app/socket套接字/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable simple_server"

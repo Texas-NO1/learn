@@ -34,7 +34,7 @@ public:
     Connection(int fd, std::string name, std::string server_name, std::string client_name) : 
     fd(fd), name(name), server_name(server_name), client_name(client_name){
         is_connected = true;
-        printf("Create Connection name %s, connect %s - %s\n", name.data(), server_name.data(), client_name.data());
+        printf("Create Connection fd %d, name %s, connect %s - %s\n", fd, name.data(), server_name.data(), client_name.data());
     }
 
     bool read(std::string &receive, int read_batch = 100) { // 一次读多少字符

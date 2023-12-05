@@ -1,1 +1,1 @@
-/usr/bin/c++    -rdynamic CMakeFiles/simple_client.dir/simple_client.cpp.o  -o simple_client  -lpthread 
+/usr/bin/c++    -rdynamic CMakeFiles/simple_client.dir/simple/simple_client.cpp.o  -o simple_client  -lpthread 

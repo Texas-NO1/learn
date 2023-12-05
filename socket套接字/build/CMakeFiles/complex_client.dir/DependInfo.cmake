@@ -4,7 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/app/socket套接字/complex_client.cpp" "/app/socket套接字/build/CMakeFiles/complex_client.dir/complex_client.cpp.o"
+  "/app/socket套接字/complex/complex_client.cpp" "/app/socket套接字/build/CMakeFiles/complex_client.dir/complex/complex_client.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 
