@@ -150,6 +150,8 @@ public:
         struct epoll_event ev;
         ev.events = EPOLLIN; // EPOLLIN监听进事件(文件可读时)
         ev.data.fd = fd;
+        // 服务端套接字也设置为nonblocking（假设对这个fd读写的话）
+        setnonblocking(fd);
         int status = epoll_ctl(epollfd, EPOLL_CTL_ADD, fd, &ev); // EPOLL_CTL_ADD添加一个fd(socket)到epollfd管理
         assert(status >= 0);
         int events_batch = 100; // 设一次最大获取100个事件
@@ -175,20 +177,29 @@ public:
                     // 可读事件 + 边缘触发(EdgeTrigger) + 错误事件
                     // 边缘触发表示，一次事件仅发送一次通知，下次新事件再来时才会重新发送通知
                     // 所以边缘触发时一定要将所有数据循环读完，因为一次收到的数据可能会大于的buff size，需要不断循环获取完所有数据再退出
-                    new_ev.events = EPOLLIN | EPOLLET | EPOLLERR;
+                    // EPOLLERR事件会默认被监听，不需要额外配置
+                    new_ev.events = EPOLLIN | EPOLLET | EPOLLHUP | EPOLLRDHUP;
                     new_ev.data.fd = new_fd;
                     status = epoll_ctl(epollfd, EPOLL_CTL_ADD, new_fd, &new_ev);
                     assert(status >= 0);
                 } else {
                     // 事件为connection的fd，表示连接有新数据或者连接有问题
                     int event_fd = events[i].data.fd;
-                    if (events[i].events == EPOLLIN) {
+                    // 使用&判断events中是否有对应事件
+                    if (events[i].events & EPOLLIN) {
                         // 连接有数据进来，读取并输出
                         std::string msg = fd2conns[event_fd].read();
                         if (!msg.empty()) printf("\n%s\n", msg.data());
                     } else {
-                        printf("conn fd %d has error\n", event_fd);
+                        printf("fd %d unexcept event %d\n", event_fd,  events[i].events);
                     }
+                }
+                if (events[i].events & (EPOLLHUP | EPOLLRDHUP)) {
+                    int event_fd = events[i].data.fd;
+                    printf("connection fd %d closed, remove it\n", event_fd);
+                    epoll_ctl(epollfd, EPOLL_CTL_DEL, event_fd, nullptr);
+                    fd2conns[event_fd].close();
+                    fd2conns.erase(event_fd);
                 }
             }
         }
