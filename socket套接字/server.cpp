@@ -41,23 +41,29 @@ public:
 
     // 返回true，表示已读完
     // 默认情况下socket fd的read为blocking模式，只有在连接失效时才会返回0，因为一直blocking读取所以不会读取到EOF
-    // 当设置read为非blocking模式时，如果读到空的则会立即返回0
+    // 当设置read为非blocking模式时，如果读不到数据则会直接返回-1，且errno设置为EAGAIN
     bool read(std::string &receive, int read_batch = 100) { // 一次读多少字符
         std::string rec(read_batch, 0);
         // printf("s\n");
         int cnt = ::read(fd, (void *)rec.data(), rec.size()); // 4. 从连接的套接字读取数据到buff
         // printf("e\n");
-        receive = rec.substr(0, cnt);
-        // printf("rec %d chars\n", cnt);
-        // blocking模式下read会返回0，非blocking模式下只会在连接断开时才会返回0
-        return cnt == 0;
+        if (cnt > 0) {
+            receive = rec.substr(0, cnt);
+            return false;
+        }
+        // printf("rec %d chars, errno is %d\n", cnt, errno); // 非blocking模式下,数据读完后返回值为-1,errno设置为EAGAIN(11)
+        // blocking模式下read会返回-1
+        // 非blocking模式下只会在连接断开时才会返回0
+        // 无论哪种情况<=0时都代表读取结束
+        return true;
     }
 
     // 一次性读取所有内容
     std::string read() {
         std::string res;
-        std::string msg;
-        while (!read(msg)) {
+        while (true) {
+            std::string msg;
+            if (read(msg)) break;
             res += msg;
         }
         return res;
@@ -152,6 +158,7 @@ public:
             int nfds = epoll_wait(epollfd, events.data(), events_batch, -1); // -1表示block住直到有事件发生
             assert(nfds >= 0);
             for (int i = 0; i < nfds; ++i) {
+                // printf("fd %d has new event %d\n", events[i].data.fd, events[i].events);
                 // 事件为server的fd，表示有新连接
                 if (events[i].data.fd == fd) {
                     int new_fd = accept(fd, nullptr, nullptr);
