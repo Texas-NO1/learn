@@ -5,6 +5,3 @@
 *.a
 *.so
 build
-socket套接字/build
-sh
-jenkins/build
