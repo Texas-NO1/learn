@@ -30,6 +30,8 @@ int main () {
     {
         char x = 'a';
         auto res = static_cast<uint64_t>(x);
+        // 常用于void*与其他类型指针的转换
+        void *temp = static_cast<void*>(&x);
         std::cout << res << std::endl;
         // static_cast<B>(A()); // 报错，父类类型不能强制转换为子类类型
         // auto temp = static_cast<uint64_t>(a); // 报错，static_cast不能强制类型转换不相关的类型
