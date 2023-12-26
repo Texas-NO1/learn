@@ -26,7 +26,7 @@ struct D : public C {
 };
 
 int main () {
-    // static_cast强制类型转换，类似于c的(T)t;
+    // static_cast强制类型转换，仅能作用于有相互联系的类型，类似于c的(T)t;
     {
         char x = 'a';
         auto res = static_cast<uint64_t>(x);
@@ -71,7 +71,7 @@ int main () {
         c = 15;
         std::cout << b << std::endl; // b转换为15
     }
-    // reinterpret_cast位的简单重新解释获取
+    // reinterpret_cast位的简单重新解释获取，可以作用于任何类型
     {
         A *a = new A();
         a->x = 1;
