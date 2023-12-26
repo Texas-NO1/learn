@@ -39,8 +39,9 @@ int main () {
         a->x = 1;
         a->y = 2;
         B *b = static_cast<B*>(a); // 父类指针可以强制转换为子类指针
+        A *aa = static_cast<A*>(b); // 子类指针可以强制转换为父类指针
         std::cout << b->x << " " << b->y << std::endl;
-        // dynamic_cast<B*>(a); // 报错，dynamic_cast必须包含多态类型
+        // dynamic_cast<B*>(new A()); // 报错，dynamic_cast必须包含多态类型
     }
     // dynamic_cast多态场景下的类型转换，必须为多态类型
     {
@@ -49,14 +50,19 @@ int main () {
         C *cc = new D();
         cc->test();
 
-        // D *d = cc; // 报错C*类型不能赋值给D*类型
+        // D *d = cc; // 报错父类类型不能赋值给子类类型
         D *dd = dynamic_cast<D*>(cc); // 使用dynamic_cast则可以赋值，前提是cc确实是D类型，否则调用dd方法会报错
         dd->test();
+
+        C *from_d_normal = dd; // 子类可以赋值给父类
+        from_d_normal->test();
+        C *from_d_cast = dynamic_cast<C*>(dd); // 通过dynamic_cast也可以将子类赋值给父类
+        from_d_cast->test();
 
         // D *d = dynamic_cast<D*>(c); // c为new C()，编译不报错
         // d->test(); // 但运行出错，因为是运行时绑定的
     }
-    // const_cast解除const修饰，还有volatile
+    // const_cast解除const修饰，还有volatile，必须是const的引用或指针类型
     {
         int a = 10;
         const int &b = a;
