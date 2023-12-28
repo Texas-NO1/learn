@@ -60,5 +60,8 @@ int main () {
     str = str + "67890";
     std::cout << str << std::endl;
     std::cout << str.size() << std::endl;
+    // std::cout << xxx; 实际上调用的是operator<<(std::cout, xxx)
+    // 因此重载operator<<的参数是cout和具体类型对象，
+    operator<<(std::cout, "xxx");
     return 0;
 }
