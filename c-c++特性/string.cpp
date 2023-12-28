@@ -11,10 +11,15 @@ private:
     void check_expend_capacity(int add_cnt) {
         if (length + add_cnt > capacity) {
             capacity = std::max(capacity * 2, length + add_cnt);
+            /* 进阶方法：定位new，直接在原来的地址上申请增大内存 */
+            new (data) char[capacity];
+            /*
+            朴素方法：申请一块更大的内存，将当前数据copy过去
             char *temp = new char[capacity];
             strcpy(temp, data);
             delete [] data;
             data = temp;
+            */
         }
     }
 public:
