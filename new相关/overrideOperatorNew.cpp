@@ -48,11 +48,11 @@ int main () {
     // Test t;
     Test *t = new Test();
     t->x = 10;
-    Test *ttemp = new(t) Test();
-    std::cout << ttemp->x << std::endl;
+    // Test *ttemp = new(t) Test();
+    // std::cout << ttemp->x << std::endl;
+    // // delete t;
+    // // char t[10];
+    // new(t) Test();
     // delete t;
-    // char t[10];
-    new(t) Test();
-    delete t;
     return 0;
 }
